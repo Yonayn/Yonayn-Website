@@ -274,6 +274,11 @@ h3 {
           flex-direction: column;
 }
 
+.large-review h4 {
+  font-weight: 300;
+  font-size: 1.7rem;
+}
+
 .large-review .video-link {
   display: block;
   margin: auto;
@@ -321,7 +326,7 @@ h3 {
 .large-review h5 {
   font-size: 1.2rem;
   font-weight: 400;
-  margin: 1em auto 3em;
+  margin: 1em auto 6em;
   text-align: center;
   width: 100%;
   color: #efefef;
@@ -376,6 +381,7 @@ h3 {
   background: #fdc80d;
   height: 4px;
   width: 36px;
+  margin-top: auto;
 }
 
 .review h5 {
@@ -555,25 +561,25 @@ h3 {
 }
 
 /* ==========================================================================
-   Offer Section
+   About Section
    ========================================================================== */
-.offer__parent {
+.about__parent {
   text-align: center;
   padding: 4rem 0;
   color: #efefef;
 }
 
-.offer__content {
+.about__content {
   position: relative;
 }
 
-.offer__content .circle {
+.about__content .circle {
   width: 100%;
   max-width: 1000px;
   height: auto;
 }
 
-.offer__content .content {
+.about__content .content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -581,15 +587,63 @@ h3 {
           transform: translate(-50%, -50%);
 }
 
-.offer__content h2 {
+.about__content h2 {
   font-size: 2rem;
   margin: 1rem 3rem 3rem;
 }
 
-.offer__content p {
+.about__content p {
   font-size: 1.3rem;
   margin: 1rem 3rem 3rem;
   line-height: 1.8;
+}
+
+.about__social h3 {
+  font-size: 2.4rem;
+  font-weight: 200;
+}
+
+.about__social h3 b {
+  font-weight: 600;
+}
+
+.about__social .email {
+  margin-top: 4rem;
+}
+
+.about__social .email a {
+  color: #fdc80d;
+  text-decoration: none;
+}
+
+.about__social .socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.about__social .socials a {
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  color: #efefef;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+.about__social .socials a span {
+  display: block;
+  margin-top: -20px;
+}
+
+.about__social .socials a:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 /* ==========================================================================
@@ -787,13 +841,13 @@ h3 {
   .review {
     width: 90%;
   }
-  .offer__parent {
+  .about__parent {
     padding-top: 0;
   }
-  .offer__content .circle {
+  .about__content .circle {
     display: none;
   }
-  .offer__content .content {
+  .about__content .content {
     width: 100%;
     position: relative;
     -webkit-transform: none;

@@ -254,6 +254,11 @@ h3 {
   display: flex;
   flex-direction: column;
 
+  h4 {
+    font-weight: 300;
+    font-size: 1.7rem;
+  }
+
   .video-link {
     display: block;
     margin: auto;
@@ -296,7 +301,7 @@ h3 {
   h5 {
     font-size: 1.2rem;
     font-weight: 400;
-    margin: 1em auto 3em;
+    margin: 1em auto 6em;
     text-align: center;
     width: 100%;
     color: $c4;
@@ -345,6 +350,7 @@ h3 {
     background: $c3;
     height: 4px;
     width: 36px;
+    margin-top: auto;
   }
 
   h5 {
@@ -509,15 +515,15 @@ h3 {
 }
 
 /* ==========================================================================
-   Offer Section
+   About Section
    ========================================================================== */
-.offer__parent {
+.about__parent {
   text-align: center;
   padding: 4rem 0;
   color: $c4;
 }
 
-.offer__content {
+.about__content {
   position: relative;
 
   .circle {
@@ -542,6 +548,45 @@ h3 {
     font-size: 1.3rem;
     margin: 1rem 3rem 3rem;
     line-height: 1.8;
+  }
+}
+
+.about__social {
+  h3 {
+    font-size: 2.4rem;
+    font-weight: 200;
+    b {
+      font-weight: 600;
+    }
+  }
+  .email {
+    margin-top: 4rem;
+    a {
+      color: $c3;
+      text-decoration: none;
+    }
+  }
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    
+    a {
+      transition-duration: 300ms;
+      color: $c4;
+      text-decoration: none;
+      margin: 0 1rem;
+
+      span {
+        display: block;
+        margin-top: -20px;
+      }
+
+      &:hover {
+          transform: scale(1.2);
+      }
+    }
   }
 }
 
@@ -731,10 +776,10 @@ h3 {
   .review {
     width: 90%;
   }
-  .offer__parent {
+  .about__parent {
     padding-top: 0;
   }
-  .offer__content {
+  .about__content {
     .circle {
       display: none;
     }
