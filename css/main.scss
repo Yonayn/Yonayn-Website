@@ -1,0 +1,781 @@
+$c1: #0a1931;
+$c2: #185adb;
+$c3: #fdc80d;
+$c4: #efefef;
+
+$f1: "Bona Nova", serif;
+$f1: "Poppins", sans-serif;
+$f2: "Poppins", sans-serif;
+
+@mixin container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+
+  @media (min-width: 1400px) {
+    width: 1370px;
+  }
+}
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: $c1;
+  background: $c4;
+  font-size: 16px;
+  font-family: $f2;
+  line-height: 1.4;
+
+  @media only screen and (min-width: 1400px) {
+    font-size: 18px;
+  }
+}
+
+body {
+  background: #0f0c29;
+  background: linear-gradient(to bottom left, darken($c2, 20%), darken($c1, 20%));
+}
+
+h1,
+h2,
+h3 {
+  font-family: $f1;
+}
+
+/* ==========================================================================
+   HELPER CLASSES
+   ========================================================================== */
+.container {
+  @include container();
+}
+
+.span--1 {
+  color: $c3;
+}
+
+.span--2 {
+  color: rgba($c4, 0.7);
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+.hr--1 {
+  border: none;
+  height: 6px;
+  width: 190px;
+  background: $c4;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar__parent {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: rgba($c1, 0);
+  transition-duration: 300ms;
+
+  & > div {
+    display: flex;
+    height: 100%;
+  }
+}
+
+.navbar__brand {
+  margin: auto auto auto 0;
+
+  a {
+    display: grid;
+  }
+
+  img {
+    margin: auto;
+    transition-duration: 300ms;
+    height: 44px;
+  }
+}
+
+.navbar__links {
+  display: flex;
+  margin: auto 2rem;
+
+  a {
+    margin: auto 1.6rem;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.navbar__action {
+  margin: auto 0;
+
+  a {
+    margin: 0;
+    font-size: 1rem;
+    padding: 0.9em 1em 0.8em;
+    border-radius: 100px;
+  }
+}
+
+.navbar__parent.scrolled {
+  background: rgba($c1, 0.9);
+  height: 70px;
+
+  .navbar__action a {
+    font-size: 0.9rem;
+  }
+
+  .navbar__brand img {
+    height: 40px;
+  }
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero__parent {
+  color: #fff;
+  padding-top: 90px;
+
+  & > div {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: calc(100vh - 90px);
+  }
+}
+
+.hero__content {
+  width: 60%;
+  min-height: 60vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+
+  hr {
+    margin: 1.6rem auto 2.6rem 0;
+  }
+
+  .action {
+    margin-top: auto;
+
+    a {
+      display: inline-block;
+      margin: 1.6rem 1rem 1rem 0;
+    }
+  }
+}
+
+.hero__image {
+  width: 40%;
+  margin: 3rem auto auto;
+  max-height: 60vh;
+
+  img {
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.hero__scroll {
+  margin-top: auto;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+
+  a {
+    color: $c4;
+    text-align: left;
+    text-decoration: none;
+
+    .icon {
+      animation: float 3s ease-in-out infinite;
+      height: 33px;
+    }
+
+    div {
+      display: inline-block;
+      margin: auto 6px;
+    }
+  }
+}
+
+/* ==========================================================================
+   Testimenials Section
+   ========================================================================== */
+.testimenials__parent {
+  color: $c4;
+
+  & > div {
+    text-align: center;
+  }
+
+  h2 {
+    margin: 4rem auto 1rem;
+  }
+
+  .h2 {
+    font-size: 1.6rem;
+    margin: 2rem auto 3rem;
+    display: block;
+  }
+}
+
+.large-review {
+  display: flex;
+  flex-direction: column;
+
+  .video-link {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 700px;
+
+    a {
+      text-decoration: none;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .icon {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      transition-duration: 300ms;
+
+      img {
+        animation: beating 3s ease-in-out infinite;
+      }
+    }
+
+    a:hover .icon {
+      transform: translate(-50%, 50%) scale(1.2);
+    }
+
+    .preview {
+      border: 4px solid $c3;
+      border-radius: 4px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  h5 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 1em auto 3em;
+    text-align: center;
+    width: 100%;
+    color: $c4;
+  }
+}
+
+.testimenials__stars {
+  p {
+    margin: 2rem auto 2rem;
+    font-size: 1.2rem;
+  }
+}
+
+.reviews-list {
+  padding: 0 0 5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.review {
+  width: calc(30% - 5rem);
+  margin: 1.2rem auto;
+  padding: 2rem 2.5rem;
+  border: 2px solid rgba($c4, 0.6);
+  border-radius: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+
+  .avatar {
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+  }
+
+  p {
+    margin: 1.6rem auto;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  hr {
+    margin-left: 0;
+    background: $c3;
+    height: 4px;
+    width: 36px;
+  }
+
+  h5 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin: 1em 0 0.4em;
+  }
+
+  h6 {
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0 0 2em;
+  }
+
+  .stars {
+    margin: 0;
+  }
+}
+
+/* ==========================================================================
+   Services Section
+   ========================================================================== */
+.services__clouds {
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: -20vh;
+
+  .cloud {
+    min-width: 110%;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.services__water {
+  height: 40vh;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: -7vh;
+  margin-top: -18vh;
+
+  .water {
+    min-width: 110%;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+
+.services__parent {
+  // background: #eee;
+  color: $c1;
+  padding-top: 2rem;
+
+  & > div {
+    text-align: center;
+  }
+
+  h2 {
+    position: relative;
+    margin: 0 auto 1rem;
+  }
+
+  .h2 {
+    position: relative;
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 0 auto 0rem;
+    display: block;
+  }
+}
+
+.service {
+  padding: 2rem 0;
+  width: 100%;
+
+  &:first-of-type {
+    background: #d8dfed;
+  }
+
+  &:nth-of-type(2) {
+    background: $c1;
+    color: $c4;
+
+    & > div {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &:nth-of-type(3) {
+    background: #d8dfed;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .content {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+
+    h3 {
+      font-size: 2rem;
+      margin: 1rem 0 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 1rem 0 2rem;
+    }
+
+    a {
+      margin: 0;
+    }
+  }
+
+  .illustration {
+    max-width: 60%;
+    position: relative;
+    z-index: 1;
+
+    img {
+      height: 600px;
+      width: 500px;
+      object-fit: contain;
+      float: right;
+    }
+  }
+}
+
+/* ==========================================================================
+   Offer Section
+   ========================================================================== */
+.offer__parent {
+  text-align: center;
+  padding: 4rem 0;
+  color: $c4;
+}
+
+.offer__content {
+  position: relative;
+
+  .circle {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin: 1rem 3rem 3rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+    margin: 1rem 3rem 3rem;
+    line-height: 1.8;
+  }
+}
+
+/* ==========================================================================
+   Lets Section
+   ========================================================================== */
+.lets__parent {
+  color: $c4;
+  text-align: center;
+  padding: 4rem 0;
+
+  h2 {
+    margin: 0 auto;
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+    margin: 2rem auto 3rem;
+  }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer__parent {
+  color: $c4;
+  text-align: center;
+  width: 100%;
+  padding: 2rem 0;
+
+  p {
+    margin-bottom: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  a {
+    color: $c3;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ==========================================================================
+   Reusable Components
+   ========================================================================== */
+
+.btn--main {
+  background: $c3;
+  color: $c1;
+  display: block;
+  width: fit-content;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  margin: 1em auto;
+  padding: 1em 1.1em 0.95em;
+  line-height: 1;
+  border-radius: 3px;
+  min-width: 8.23em;
+  transition-duration: 300ms;
+  border: none;
+
+  &:hover {
+    background: darken($c3, 10%);
+  }
+
+  &:active {
+    background: darken($c3, 20%);
+  }
+
+  &.big {
+    padding: 1.1em 1.4em 1em;
+    font-size: 1.3rem;
+  }
+}
+
+.btn--dark {
+  background: $c1;
+  color: $c4;
+  display: block;
+  width: fit-content;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+  text-decoration: none;
+  margin: 1em auto;
+  padding: 0.6em 0.2em 0.5em;
+  line-height: 1;
+  border-radius: 3px;
+  min-width: 8.23em;
+  transition-duration: 300ms;
+  border: none;
+
+  &:hover {
+    background: lighten($c1, 10%);
+  }
+
+  &:active {
+    background: lighten($c1, 20%);
+  }
+
+  &.big {
+    padding: 1.1em 1.4em 1em;
+    font-size: 1.3rem;
+  }
+}
+
+.label--main {
+  background: darken($c4, 10%);
+  color: lighten($c1, 10%);
+  font-size: 1rem;
+  display: block;
+  margin: auto;
+  width: fit-content;
+  line-height: 2em;
+  padding: 0 1.6em;
+  border-radius: 4px;
+  opacity: 0.95;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (max-width: 760px) {
+  .navbar__links,
+  .navbar__action {
+    display: none;
+  }
+  .navbar__brand {
+    margin: auto;
+  }
+  .hero__content {
+    width: 96%;
+    text-align: center;
+    h1 {
+      font-size: 2.1rem;
+    }
+    hr {
+      margin: 2rem auto;
+    }
+    .action {
+      a {
+        display: block;
+        margin: 2rem auto;
+      }
+    }
+  }
+  .hero__image {
+    width: 94%;
+    margin: 1rem auto;
+    max-height: 50vh;
+    order: -1;
+  }
+  .hero__scroll {
+    margin-top: 2rem;
+  }
+  .service > div {
+    padding: 1rem 0;
+    flex-direction: column-reverse !important;
+    .content {
+      width: 90%;
+    }
+    .illustration {
+      max-width: 90%;
+      margin: 1rem auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .services__water {
+    margin-top: -40px;
+  }
+  .review {
+    width: 90%;
+  }
+  .offer__parent {
+    padding-top: 0;
+  }
+  .offer__content {
+    .circle {
+      display: none;
+    }
+    .content {
+      width: 100%;
+      position: relative;
+      transform: none;
+      left: initial;
+      top: initial;
+    }
+  }
+}
+
+/* ==================================
+  CSS Animations
+=====================================*/
+
+@keyframes float {
+  0% {
+    transform: translatey(10px);
+  }
+
+  50% {
+    transform: translatey(-10px);
+  }
+
+  100% {
+    transform: translatey(10px);
+  }
+}
+
+@keyframes beating {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
