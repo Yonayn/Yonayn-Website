@@ -1,0 +1,58 @@
+$c1: #0a1931;
+$c2: #185adb;
+$c3: #fdc80d;
+$c4: #efefef;
+
+$f1: "Bona Nova", serif;
+$f1: "Poppins", sans-serif;
+$f2: "Poppins", sans-serif;
+
+@mixin container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 768px) {
+    width: 750px;
+  }
+
+  @media (min-width: 992px) {
+    width: 970px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+
+  @media (min-width: 1400px) {
+    width: 1370px;
+  }
+}
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: $c1;
+  background: $c4;
+  font-size: 16px;
+  font-family: $f2;
+  line-height: 1.4;
+
+  @media only screen and (min-width: 1400px) {
+    font-size: 18px;
+  }
+}
+
+body {
+  background: #0f0c29;
+  background: linear-gradient(to bottom left, darken($c2, 20%), darken($c1, 20%));
+}
+
+h1,
+h2,
+h3 {
+  font-family: $f1;
+}

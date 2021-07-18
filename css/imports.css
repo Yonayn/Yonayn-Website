@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  color: #0a1931;
+  background: #efefef;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.4;
+}
+
+@media only screen and (min-width: 1400px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  background: #0f0c29;
+  background: -webkit-gradient(linear, right top, left bottom, from(#0e347f), to(black));
+  background: linear-gradient(to bottom left, #0e347f, black);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+/*# sourceMappingURL=imports.css.map */
