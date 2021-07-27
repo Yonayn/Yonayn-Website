@@ -120,12 +120,24 @@
   flex-direction: column;
 
   h1 {
+    font-size: 3.4rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 1.3rem;
+  }
+  .subhead {
+    margin-bottom: 1rem;
     font-size: 2.4rem;
-    font-weight: 600;
+    font-weight: 400;
+    font-family: $f1;
+
+    .focus {
+      font-weight: 600;
+    }
   }
 
   hr {
-    margin: 1.6rem auto 2.6rem 0;
+    margin: 1.6rem auto 1rem 0;
   }
 
   .action {
